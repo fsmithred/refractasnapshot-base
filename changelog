@@ -1,0 +1,592 @@
+refractasnapshot-base (10.0.1) unstable; urgency=low
+
+  * Recommends dosfstools. UEFI snapshot boots to grub prompt without it.
+  * Added test and warning if dosfstools is not installed and make_efi=yes.
+  * Replaced md5sum with sha256sum.
+  * Added example to configfile for custom kernel_image.
+  * Added test for missing configfile.
+  * Ready for language translation.
+
+ -- fsmithred <fsmithred@gmail.com>  Sat, 04 Feb 2017 10:00:00 -0500
+
+
+
+refractasnapshot-base (10.0.0) unstable; urgency=low
+
+  * Recommends refracta-lang or live-config-refracta (<= 0.0.4) to 
+  * simplify boot menus and bypass lightdm language selector bug.
+  * Restored boot menu templates to use $DISTRO, netconfig and username.
+
+ -- fsmithred <fsmithred@gmail.com>  Mon, 10 Oct 2016 21:50:00 -0400
+
+
+
+refractasnapshot-base (9.3.4+10.0.0beta05) unstable; urgency=low
+
+  * Added modules to the efi boot image to fix booting in blind mode.
+  * Added force_efi mode to make efi-ready iso with grub-pc installed.
+  * Changed boot splash from blue to purple.
+  * Moved efi_work directory into main work_dir.
+
+ -- fsmithred <fsmithred@gmail.com>  Thu, 06 Oct 2016 17:10:00 -0400
+
+
+
+refractasnapshot-base (9.3.4+10.0.0beta03) unstable; urgency=low
+
+  * Added modules to the efi boot image for more commands at grub prompt
+  * Fixed $text_editor so it works with /usr/bin/nano or /bin/nano.
+
+ -- fsmithred <fsmithred@gmail.com>  Wed, 03 Aug 2016 20:10:00 -0400
+
+
+
+refractasnapshot-base (9.3.4+10.0.0beta02) unstable; urgency=low
+
+  * Fixed xorriso options so isohybrid usb will boot with uefi.
+  * Config file is now required. 
+
+ -- fsmithred <fsmithred@gmail.com>  Sat, 11 Jun 2016 11:50:00 -0400
+
+
+
+refractasnapshot-base (9.3.4+10.0.0beta01) unstable; urgency=low
+
+  * Added uefi support
+  * Reorganized code into functions and grouped for multiple tasks.
+  * (re-squash, re-make efi, re-make iso)
+
+ -- fsmithred <fsmithred@gmail.com>  Thu, 02 Jun 2016 18:10:00 -0400
+
+
+refractasnapshot-base (9.3.4) unstable; urgency=low
+
+  * Changed "config=" to "components=" in stock boot help f5.txt
+  * Added support for netman/simple-netaid to keep or remove configs.
+  * Added hexchat logs to rsync excludes list.
+  * Use variable $initrd_image, not file name in preparing encryption. 
+
+ -- fsmithred <fsmithred@gmail.com>  Sun, 29 May 2016 11:20:00 -0400
+
+
+
+refractasnapshot-base (9.3.3) unstable; urgency=low
+
+  * username=<username> added to boot menu if name is not "user".  
+
+ -- fsmithred <fsmithred@gmail.com>  Sat, 07 May 2016 12:50:00 -0400
+
+
+
+refractasnapshot-base (9.3.2) unstable; urgency=low
+
+  * Removed code for clamav init links.
+  * Added chain.c32 to list of copied isolinux modules.  
+
+ -- fsmithred <fsmithred@gmail.com>  Sun, 21 Feb 2016 21:40:00 -0500
+
+
+
+refractasnapshot-base (9.3.1) unstable; urgency=low
+
+  * Renamed memtest86+.bin to memtest on live media, so it works.
+  * Removed "union=aufs" from boot commands. (for stretch/sid)    
+
+ -- fsmithred <fsmithred@gmail.com>  Wed, 17 Feb 2016 21:35:00 -0500
+
+
+
+refractasnapshot-base (9.3.0) unstable; urgency=low
+
+  * Removed patch for /usr/share/initramfs-tools/init.
+  * Added code to create static device nodes in /dev.
+    
+
+ -- fsmithred <fsmithred@gmail.com>  Fri, 05 Feb 2016 15:48:00 -0500
+
+
+
+refractasnapshot-base (9.2.2) unstable; urgency=low
+
+  * Added reminder to turn off numlock.
+  * Fixed stdmenu.cfg to point to isolinux subdirectory for splash image. 
+  * Added code from live-build to blank systemd's /etc/machine-id
+  
+
+ -- fsmithred <fsmithred@gmail.com>  Fri, 05 Feb 2016 12:08:00 -0500
+ 
+ 
+
+refractasnapshot-base (9.2.1) unstable; urgency=low
+
+  * Added support for Gnome NetworkManager connection information.
+  * Fixed bug in 9.2.0 that deleted the system network connections instead of the work_dir copy.
+
+
+ -- fsmithred <fsmithred@gmail.com>  Sun, 23 Aug 2015 07:45:00 -0400
+
+
+
+refractasnapshot-base (9.2.0) unstable; urgency=low
+
+  * Script truncates current logs in /var/log and removes archived logs.
+  * Refracta-specific boot help files are now optional.
+  * Added option to add CRYPTSETUP=y to initrd.  (and test for which update-initramfs to use)
+  * Added option to copy network configs to snapshot and include ip=frommedia in the boot menu, else existing configs get wiped.
+
+
+ -- fsmithred <fsmithred@gmail.com>  Fri, 24 Jul 2015 12:02:00 -0400
+
+
+
+refractasnapshot-base (9.1.6-2) unstable; urgency=low
+
+  * Check for /usr/lib/syslinux/isohdpfx.bin
+
+
+ -- fsmithred <fsmithred@gmail.com>  Sun, 15 Mar 2015 20:25:00 -0400
+
+
+
+refractasnapshot-base (9.1.6-1) unstable; urgency=low
+
+  * Fixed endless loop that asked to patch init.
+  * Test for /usr/bin/patch
+
+
+ -- fsmithred <fsmithred@gmail.com>  Sat, 14 Mar 2015 17:52:00 -0400
+
+
+
+refractasnapshot-base (9.1.6) unstable; urgency=low
+
+  * Added code to patch /usr/share/initramfs-tools/init for systems
+  * running without systemd and with util-linux-2.25 so iso can boot.
+  * Fixed dependencies so package will install on Wheezy.
+  * snapshot.iso.md5 now contains filename without path.
+  * Boot menu title is "$DISTRO" instead of "Refracta"  
+
+
+ -- fsmithred <fsmithred@gmail.com>  Wed, 25 Feb 2015 17:40:00 -0500
+
+
+
+refractasnapshot-base (9.1.5) unstable; urgency=low
+
+  * Removed live/config/1161-openssh-server. 
+  * Edit sshd_config in work_dir instead.
+  * Added nocrypt.sh and instructions for making a snapshot
+  * from an encrypted system.
+
+ -- fsmithred <fsmithred@gmail.com>  Thu, 25 Dec 2014 08:55:00 -0500
+
+
+
+refractasnapshot-base (9.1.4) unstable; urgency=low
+
+  * Fixed typo in section that makes 1161-openssh-server
+  * Fixed wording in config file for ssh settings.
+  * Test for pmount.allow looks in $work_dir for file.
+  * Added $rsync_options to config file (--delete-before and
+  * --delete-excluded for copy_filesystem)
+  * Removed "quiet" and ${CONFIGS} from boot menu.
+  * Added option to clear geany's list of recent files.
+
+ -- fsmithred <fsmithred@gmail.com>  Sun, 30 Nov 2014 09:00:00 -0500
+
+
+
+refractasnapshot-base (9.1.3) unstable; urgency=low
+
+  * Fixed cleanup package list directories on iso.
+  * Add distro name to boot menu in place with sed instead of echoing
+  * menu from script. This prevents clobbering a custom iso_dir or menu.
+  * Add 1161-openssh-server to live-config scripts to allow ssh password
+  * Added chain.c32 to isolinux menu for hard disk boot.
+  * Updated copy of memtest86+.bin to version 5.01-2
+  * Added - /var/lib/live/config/* to excludes.
+
+ -- fsmithred <fsmithred@gmail.com>  Wed, 22 Oct 2014 22:45:00 -0400
+
+
+
+refractasnapshot-base (9.1.2-2) unstable; urgency=low
+
+  * Added syslinux-common to Depends, in case Install Recommends is "no".
+
+ -- fsmithred <fsmithred@gmail.com>  Thu, 25 Sep 2014 08:30:00 -0400
+
+
+
+refractasnapshot-base (9.1.2-1) unstable; urgency=low
+
+  * Test for location of isohdpfx.bin (moved to /usr/lib/ISOLINUX/)
+
+ -- fsmithred <fsmithred@gmail.com>  Wed, 27 Aug 2014 06:30:00 -0400
+
+
+
+refractasnapshot-base (9.1.2) unstable; urgency=low
+
+  * Replaced genisoimage and isohybrid commands with xorriso
+  * Added support for syslinux and isolinux version 6.x
+  * Moved entry for distribution name to beginning of program.
+  * Added tests for cpulimit and rm to reduce error messages.
+  * -n, -d and -c command-line options can be used together.
+  * Fixed initial text in 'read' command in set_distro_name.
+
+
+ -- fsmithred <fsmithred@gmail.com>  Mon, 26 May 2014 17:50:00 -0400
+
+
+
+refractasnapshot-base (9.1.1) unstable; urgency=low
+
+  * Commented out code to create /etc/sudoers.d/live. Let live-config do it.
+  * Updated boot help pages and boot menu for newer live-config.
+  * Added refracta-lang to Suggests.
+
+
+ -- fsmithred <fsmithred@gmail.com>  Sat, 17 May 2014 14:00:00 -0400
+
+
+
+refractasnapshot-base (9.1.0) unstable; urgency=low
+
+  * Added cpulimit to config for rsync and mksquashfs.
+  * Snapshot creates /etc/sudoers.d/live for primary user, NOPASSWD
+  * Boot menu for live image is generated with variable for distro name.
+
+
+ -- fsmithred <fsmithred@gmail.com>  Fri, 28 Mar 2014 10:30:00 -0400
+
+
+
+refractasnapshot-base (9.0.9-7) unstable; urgency=low
+
+  * Added test and warning for missing kernel or initrd.
+
+  
+ -- fsmithred <fsmithred@gmail.com>  Mon, 09 Dec 2013 11:41:00 -0500
+
+
+
+refractasnapshot-base (9.0.9-6) unstable; urgency=low
+
+  * Fixed $snapshot_count
+  
+
+ -- fsmithred <fsmithred@gmail.com>  Fri, 01 Nov 2013 05:55:00 -0400
+
+
+
+refractasnapshot-base (9.0.9-5) unstable; urgency=low
+
+  * added browser sqlite files to rsync excludes:
+  * urlclassifier3, places, cookies, signons, formhistory, downloads
+  * added icon cache, failed thumbs and some backup files to excludes.
+  * pkglist now includes held packages
+  * Run updatedb before copying filesystem
+  * Added debug mode
+  
+
+ -- fsmithred <fsmithred@gmail.com>  Sat, 19 Oct 2013 23:40:00 -0400
+
+
+
+refractasnapshot-base (9.0.9-4) unstable; urgency=low
+
+  * Added config=openssh-server to boot append line in live.cfg
+
+  
+ -- fsmithred <fsmithred@gmail.com>  Sat, 07 Sep 2013 22:20:00 -0400
+
+
+
+refractasnapshot-base (9.0.9-3) unstable; urgency=low
+
+  * Copy /var/lib/mlocate/mlocate.db, don't disable updatedb.
+  * Exclude ssh_host_keys - new ones will be regenerated at boot.
+
+  
+ -- fsmithred <fsmithred@gmail.com>  Fri, 06 Sep 2013 22:00:00 -0400
+
+
+
+refractasnapshot-base (9.0.9-2) unstable; urgency=low
+
+  * Fixed syntax error in copy_filesystem function.
+  * Fixed a wrong variable in check_directories function.
+
+  
+ -- fsmithred <fsmithred@gmail.com>  Sun, 04 Aug 2013 21:05:00 -0400
+
+
+
+refractasnapshot-base (9.0.9-1) unstable; urgency=low
+
+  * Changed "CD" to "CD or DVD" in first window text and help text.
+  * readme.refractasnapshot.txt now goes to /usr/share/docs
+
+  
+ -- fsmithred <fsmithred@gmail.com>  Sun, 04 Aug 2013 11:43:00 -0400
+
+
+
+refractasnapshot-base (9.0.9) unstable; urgency=low
+
+  * Added test for remote, unmounted snapshot_dir or work_dir
+  * Added more items to excludes, especially root's hidden files.
+  * Changed rsync option '--delete' to '--delete-excludes'
+  * Added nocopy option to bypass rsync.
+  
+ -- fsmithred <fsmithred@gmail.com>  Tue, 09 Apr 2013 09:45:00 -0500   
+ 
+ 
+
+refractasnapshot-base (9.0.8-2) unstable; urgency=low
+
+  * Release Notes get added to root of iso (if they exist).
+  * Added ~/.gnupg ~/.pulse* and ~/.dbus to excludes.
+  * Added /etc/fstab.d/* to excludes.
+  * Fixed stdmenu.cfg to stop scrolling boot line.
+
+ 
+ -- fsmithred <fsmithred@gmail.com>  Tue, 26 Mar 2013 11:15:00 -0500 
+
+
+
+refractasnapshot-base (9.0.8-1) unstable; urgency=low
+
+  * Fixed bug that failed to delete old package list dir from iso.
+
+ 
+ -- fsmithred <fsmithred@gmail.com>  Sun, 20 Jan 2013 15:00:00 -0500
+ 
+ 
+
+refractasnapshot-base (9.0.8) unstable; urgency=low
+
+  * Excluded /lib/live/overlay, image, rootfs, mount and /var/run/* 
+  * Added boot options for runlevel 3 and for unionfs
+  * Boot timout 20 seconds
+  * Isolinux boot menu uses separate files again, to fix a problem
+  * with using alternate boot methods by typing them at the boot 
+  * prompt. (e.g., 'boot: live' or 'boot: nomodeset')
+  * $boot_menu is (temporarily?) set to live.cfg in config file.
+
+ 
+ -- fsmithred <fsmithred@gmail.com>  Wed, 02 Jan 2013 13:15:00 -0500
+
+
+
+refractasnapshot-base (9.0.7) unstable; urgency=low
+
+  * Cleaned up isolinux.cfg so that system knows it's a text file.
+  * Keep version number in sync with refractasnapshot-gui, which now
+  * can use yad or zenity.
+
+  
+ -- fsmithred <fsmithred@gmail.com>  Wed, 14 Nov 2012 22:07:00 -0500
+
+
+
+refractasnapshot-base (9.0.6-2) unstable; urgency=low
+
+  * Fixed option for xz compression with mksquashfs
+
+  
+ -- fsmithred <fsmithred@gmail.com>  Fri,  26 Oct 2012 12:35:00 -0400
+
+
+
+refractasnapshot-base (9.0.6-1) unstable; urgency=low
+
+  * Added option for xz compression with mksquashfs
+  * Added '-allow-limited-size' to genisoimage command for iso > 4GB
+ 
+  
+ -- fsmithred <fsmithred@gmail.com>  Tue,  23 Oct 2012 11:50:00 -0400 
+  
+
+
+refractasnapshot-base (9.0.6) unstable; urgency=low
+
+  * Added /var/spool/mail/* to excludes list.
+  * Replaced isolinux boot splash with galaxy image.
+  * Modified spacing on isolinux boot menu.
+  * expanded dependencies to include live-config-systemd or live-config-upstart
+  * in place of live-config-sysvinit
+  * Added test for editor if $edit_boot_menu is set to "yes".
+  * $text_editor and $gui_editor defined with full path.
+   
+  
+ -- fsmithred <fsmithred@gmail.com>  Sun,  09 Sep 2012 15:00:00 -0400
+ 
+ 
+ 
+refractasnapshot-base (9.0.5-4) unstable; urgency=low
+
+  * mksquashfs now uses xz compression for smaller snapshot.
+
+
+ -- fsmithred <fsmithred@gmail.com>  Sun,  05 Aug 2012 17:00:00 -0400
+
+
+
+refractasnapshot-base (9.0.5-3) unstable; urgency=low
+
+  * Replaced black isolinux boot splash with MidnightBeach
+  * Added $disable_updatedb and $pmount_fixed to configs.
+  * Removed rsync and genisoimage commands from config file.
+  * Added $disable_freshclam and $root_ssh to configs.
+
+
+ -- fsmithred <fsmithred@gmail.com>  Sun,  24 Jun 2012 11:20:00 -0400
+
+
+
+refractasnapshot-base (9.0.5-2) unstable; urgency=low
+
+  * added deps: live-boot-initramfs-tools, live-config-sysvinit
+  * added "Boot hard disk" to isolinux boot menu
+
+	
+ -- fsmithred <fsmithred@gmail.com>  Tue,  19 Jun 2012 14:30:00 -0400
+
+
+
+refractasnapshot-base (9.0.5-1) unstable; urgency=low
+
+  * fixed section of code that removes old package-lists from the iso
+
+	
+ -- fsmithred <fsmithred@gmail.com>  Sun,  20 May 2012 09:30:00 -0400
+
+
+
+refractasnapshot-base (9.0.5) unstable; urgency=low
+
+  * added command-line option to use a different config file
+  * removed the warning for separate /tmp partition
+  * added config for snapshot.iso filename
+  * package list gets put on the cdrom, inside a directory
+  *	that's named after the snapshot.iso to help identify the build
+  * added config for default text editor and gui editor
+
+	
+ -- fsmithred <fsmithred@gmail.com>  Sun,  06 May 2012 14:45:00 -0400
+
+
+
+refractasnapshot-base (9.0.4) unstable; urgency=low
+
+  * rsync command for system copy and genisoimage commands moved
+    into functions in config file
+
+
+ -- fsmithred <fsmithred@gmail.com>  Sun, 15 Apr 2012 13:10:00 -0400
+
+
+
+refractasnapshot-base (9.0.3) unstable; urgency=low
+
+  * aded /etc/blkid.tab to snapshot_exclude.list
+  * added option to stop before squashing to edit files in $work_dir/myfs/
+  * reduced number of isolinux config files
+  * moved $work_dir out of /tmp 
+  * added option to use a different isolinux directory
+  * added test for pmount.allow to eliminate error "No such file"
+
+
+ -- fsmithred <fsmithred@gmail.com>  Sun, 15 Apr 2012 11:30:00 -0400
+
+
+
+refractasnapshot-base (9.0.2-4) unstable; urgency=low
+
+  * added boot help screen for locales
+  * added a space at end boot append line (in live.cfg)
+
+
+ -- fsmithred <fsmithred@gmail.com>  Sun, 19 Jan 2012 18:00:00 -0500
+
+
+
+refractasnapshot-base (9.0.2-3) unstable; urgency=low
+
+  * fixed bug that prevented making isohybrid
+
+
+ -- fsmithred <fsmithred@gmail.com>  Sun, 14 Jan 2012 08:00:00 -0500
+
+
+
+refractasnapshot-base (9.0.2-2) unstable; urgency=low
+
+  * Uncomment the line in /etc/pmount.allow that was commented by the
+    installer, so that users can mount/unmount fixed drives when running
+    live-CD.
+
+
+ -- fsmithred <fsmithred@gmail.com>  Sun, 08 Jan 2012 08:00:00 -0500
+
+
+
+refractasnapshot-base (9.0.2-1) unstable; urgency=low
+
+  * update snapshot_exclude.list to spare /var/log/gdm 
+    and to exclude /var/cache/apt/apt-file/* and - /var/lib/dhcp/*
+
+
+ -- fsmithred <fsmithred@gmail.com>  Wed, 25 Nov 2011 10:00:00 -0500
+ 
+ 
+
+refractasnapshot-base (9.0.2) unstable; urgency=low
+
+  * Added leading slashes on all items listed in rsync excludes file,
+    and added exception to preserve freshclam logs.
+  * Added syslinux as a dependency.
+  * isolinux.bin and vesamenu.c32 are now copied from system to keep
+    them updated.
+  * iso image is converted to isohybrid
+  * Added help screens to isolinux boot menu  
+
+  
+ -- fsmithred <fsmithred@gmail.com>  Wed, 16 Nov 2011 11:00:00 -0500
+
+
+
+refractasnapshot-base (9.0.1-2) unstable; urgency=low
+
+  * Added live-config to dependencies.
+  * Changed "live" to "/live" in excludes file, fixing a missing live
+    script in snapshots.
+  * Added /root/.bash_history to excludes.
+  
+ -- fsmithred <fsmithred@gmail.com>  Thu, 29 Sep 2011 11:34:00 -0400
+ 
+ 
+ 
+refractasnapshot-base (9.0.1-1) unstable; urgency=low
+
+  * Created proper, signed debs.
+  * Added code to disable updatedb for the live-CD.
+  
+ -- fsmithred <fsmithred@gmail.com>  Tue, 06 Sep 2011 12:12:04 -0400
+
+
+
+refractasnapshot (9.0.0-1) unstable; urgency=low
+
+  * Initial release
+  * Bash rewrite of the earlier Python verions (especially
+  refractasnapshot-8.0.4 by Dean Linkous.
+  * Added config file with options for different work directory and 
+  snapshot directory, save rsync copy of filesystem, number or date the 
+  snapshot.iso files, create md5sum file, specify which kernel to use, 
+  specify a custom excludes file and error log.
+  * Created separate versions of the script for GUI and CLI.
+  
+ -- fsmithred <fsmithred@gmail.com>  Fri, 12 Aug 2011 23:45:50 -0400
