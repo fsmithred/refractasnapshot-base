@@ -1,3 +1,13 @@
+refractasnapshot-base (10.0.2) unstable; urgency=low
+
+  * Oops! 10.0.1 was uploaded too soon.
+  * Ready for language translation, really, I think.
+  * Other than that, same as 10.0.1
+
+ -- fsmithred <fsmithred@gmail.com>  Sat, 04 Feb 2017 10:50:00 -0500
+
+
+
 refractasnapshot-base (10.0.1) unstable; urgency=low
 
   * Recommends dosfstools. UEFI snapshot boots to grub prompt without it.

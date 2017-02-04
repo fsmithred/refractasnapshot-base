@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-version="refractasnapshot-10.0.1 (20170204)"
+version="refractasnapshot-10.0.2 (20170204)"
 
 TEXTDOMAIN=refractasnapshot-base
 TEXTDOMAINDIR=/usr/share/locale/
