@@ -95,18 +95,18 @@ NETWORK CONFIGURATIONS
 If you want custom network configurations to be copied into the snapshot,
 uncomment the line in the config file that has:
 	netconfig_opt="ip=frommedia"
-This will preserve your /etc/network/interfaces file and any saved wicd
-or gnome network-manager settings and will add "ip=frommedia" to the 
-boot commands. 
+
+This will preserve your /etc/network/interfaces and any saved wireless
+configurations. This works for NetworkManager, simple-netaid/netman
+and wicd. It will also add "ip=frommedia" to the boot command, so that 
+the saved configuration will be used in the live system.
 
 If you leave the line commented, the default behavior is to
 replace the interfaces file with one that only has the loopback interface
-configured and to delete any wicd or network-manager configurations. 
+configured and to delete any saved wireless configurations. 
 (This only affects the filesystem copy in $work_dir/myfs.)
 
-Note: Network configurations handled by anything other than wicd or
-gnome network manager may be stored in some other files that are not
-supported by this option.
-
-
-
+NOTE!!! If you're using some other network manager, and you don't want
+your configs to be copied, you need to add the appropriate files to
+the excludes list. (Tell me what those files are, and I'll fix 
+refractasnapshot to handle it.)
