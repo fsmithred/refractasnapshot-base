@@ -6,4 +6,4 @@ iso/* usr/lib/refractasnapshot/iso
 nocrypt.sh usr/lib/refractasnapshot
 boot_help/* usr/lib/refractasnapshot/boot_help
 grub.cfg.template usr/lib/refractasnapshot
-mk-grub-efi-image usr/lib/refractasnapshot
+
