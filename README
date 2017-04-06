@@ -1,5 +1,3 @@
-# refractasnapshot-base
-
 v. 10.0.0+
 Refracta Snapshot creates a bootable live-CD image which is a copy of
 your running system. Any changes you make to the running system, 

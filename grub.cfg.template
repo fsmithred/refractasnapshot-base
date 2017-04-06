@@ -1,0 +1,60 @@
+if loadfont $prefix/font.pf2 ; then
+  set gfxmode=640x480
+  insmod efi_gop
+  insmod efi_uga
+  insmod video_bochs
+  insmod video_cirrus
+  insmod gfxterm
+  insmod jpeg
+  insmod png
+  terminal_output gfxterm
+fi
+
+background_image /boot/grub/splash.png
+set menu_color_normal=white/black
+set menu_color_highlight=dark-gray/white
+set timeout=15
+
+
+menuentry "${DISTRO} (defaults) US English" {
+    set gfxpayload=keep
+    linux   /live/vmlinuz boot=live ${netconfig_opt} ${username_opt}    
+    initrd  /live/initrd.img
+}
+
+menuentry "${DISTRO} (defaults) UK English" {
+    set gfxpayload=keep
+    linux   /live/vmlinuz boot=live ${netconfig_opt} ${username_opt} lang=en_GB 
+    initrd  /live/initrd.img
+}
+
+menuentry "${DISTRO} (defaults) Espanol" {
+    set gfxpayload=keep
+    linux   /live/vmlinuz boot=live ${netconfig_opt} ${username_opt} lang=es_ES 
+    initrd  /live/initrd.img
+}
+
+
+submenu 'Advanced options ...' {
+
+    menuentry "${DISTRO} (nomodeset)" {
+	set gfxpayload=keep
+	linux   /live/vmlinuz boot=live nomodeset nouveau.modeset=0 radeon.modeset=0 vga=normal ${netconfig_opt} ${username_opt}  
+	initrd  /live/initrd.img
+    }
+    menuentry "${DISTRO} (no hardware probe)" {
+	set gfxpayload=keep
+	linux   /live/vmlinuz boot=live nocomponents=xinit noapm noapic nolapic nodma nosmp vga=normal ${netconfig_opt} ${username_opt} 
+	initrd  /live/initrd.img
+    }
+    menuentry "${DISTRO} (load to RAM)" {
+	set gfxpayload=keep
+	linux   /live/vmlinuz boot=live toram ${netconfig_opt} ${username_opt}    
+	initrd  /live/initrd.img
+    }
+
+    menuentry "Memory test" {
+	kernel   /live/memtest
+    }
+
+}

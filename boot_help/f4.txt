@@ -1,0 +1,24 @@
+                  0fRefracta07                                07
+
+___ Additional boot options ___
+
+You can use the following boot parameters at the 0fboot:07 prompt, 
+in combination with the boot method (see <09F307>).
+
+0fpersistence07    Use persistent (read/write) partition or file
+0fswap07           Use local swap partitions (needs patched initrd)
+0fnofastboot07     Enable filesystem check
+0fnomodeset07      Disable kernel mode setting
+0ftoram07          Copy whole read-only media to RAM		
+0fnoapic nolapic07 Disable buggy APIC interrupt routing   
+0fsingle07         Single-user mode (runlevel 1)
+0facpi=noirq07 or 0facpi=off07      (partly) disable ACPI                  
+
+See 'man live-boot' or the kernel's kernel-parameters.txt file 
+for more options and information.
+
+
+You may:
+- press F1 to return to the help index
+- type 0fmenu07 and press ENTER to go back to the boot screen
+- press ENTER to boot

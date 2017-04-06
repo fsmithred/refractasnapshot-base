@@ -1,0 +1,23 @@
+                  0fRefracta07                                07
+
+You can specify the default language at the boot prompt below in combination 
+with the boot method (see <09F307>) and any other options (see <09F407>). 
+Examples:
+  Use default boot method (live); set locale and keyboard layout for Germany:
+0fboot: live components=locales,keyboard-configuration locales=de_DE.UTF-8 keyboard-layouts=de07
+  Do same with refracta-lang:
+0fboot: live components=refracta-lang lang=de_DE 07
+
+Or, at the boot menu screen, press TAB and append the boot line with the
+locale options. (e.g. 0fcomponents=locales locales=de_DE.UTF-807 or
+
+  Some common locales:
+France          fr_FR.UTF-8
+Spain           es_ES.UTF-8
+Russia          ru_RU.UTF-8
+
+
+You may:
+- press F1 to return to the help index
+- type 0fmenu07 and press ENTER to go back to the boot screen
+- press ENTER to boot

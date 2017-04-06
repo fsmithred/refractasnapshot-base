@@ -1,0 +1,55 @@
+This work was first packaged for Debian by:
+
+    fsmithred <fsmithred@gmail.com> on Fri, 12 Aug 2011 23:11:39 -0400
+
+It was downloaded from:
+
+    https://github.com/fsmithred/refracta
+
+Upstream Author(s):
+
+    fsmithred <fsmithred@gmail.com>
+
+
+Copyright:
+
+    Copyright (C) 2011-2017 fsmithred <fsmithred@gmail.com>
+    Copyright (portions) (C) 2009, 2010 Dean Linkous
+
+
+License:
+
+    GPL-3
+
+
+The Debian packaging is:
+
+    Copyright (C) 2011-2016 fsmithred <fsmithred@gmail.com>
+
+    and is licensed under the GPL version 3,
+    see "/usr/share/common-licenses/GPL-3".
+
+
+
+
+iso/isolinux/*  (except live.cfg and splash.png)
+
+    Files from the syslinux package,
+    Copyright: (C) 1994-2014 H. Peter Anvin <hpa@zytor.com>
+    License: GPL-2+
+
+    On Debian systems, the complete text of the GNU General Public License
+    can be found in /usr/share/common-licenses/GPL-2 file. 
+
+
+
+
+iso/live/memtest
+
+    File from memtest86+ package,
+    Copyright (C) 2004,2005,2007,2009 by Samuel Demeulemeester
+    <memtest@memtest.org>, based on memtest86 by Chris Brady
+    <cbrady@sgi.com>, and various contributors.
+
+    On Debian GNU/Linux systems, the complete text of the GNU General
+    Public License can be found in `/usr/share/common-licenses/GPL-2'.

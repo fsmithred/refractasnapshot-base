@@ -1,0 +1,10 @@
+                  0fTITLE07                                07
+
+
+
+
+You may:
+- press F1 to return to the help index
+- type 0fmenu07 and press ENTER to go back to the boot screen
+- press ENTER to boot
+

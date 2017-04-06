@@ -1,0 +1,18 @@
+                  0fRefracta07                                07
+
+Where to get more help:
+
+http://www.ibiblio.org/refracta/
+http://refracta.freeforums.org/
+http://sourceforge.net/projects/refracta/
+http://www.debian.org/
+http://wiki.debian.org/
+http://www.debian.org/doc/user-manuals
+
+
+
+You may:
+- press F1 to return to the help index
+- type 0fmenu07 and press ENTER to go back to the boot screen
+- press ENTER to boot
+

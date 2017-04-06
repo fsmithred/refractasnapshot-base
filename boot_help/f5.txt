@@ -1,0 +1,19 @@
+                  0fRefracta07                                07
+
+Boot Parameters for live-config can be appended to the boot command line
+with the following syntax:
+0fcomponents=script1,script2,script3  option=value07
+
+Examples:
+
+For ssh server, sudo and autologin
+0fcomponents=openssh-server,sudo nocomponents=lightdm07
+	
+Note: sudo and autologin are the default if no components are added.
+
+
+
+You may:
+- press F1 to return to the help index
+- type 0fmenu07 and press ENTER to go back to the boot screen
+- press ENTER to boot

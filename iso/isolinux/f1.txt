@@ -1,0 +1,19 @@
+                  0fLive Media07                                07
+
+
+
+<09F107>   This page, the help index.
+<09F207>   unused
+<09F307>   Boot methods for special ways of using this CD-ROM
+<09F407>   Additional boot options
+<09F507>   Change default language
+<09F607>   unused
+<09F707>   unused
+<09F807>   Where to get more help
+<09F907>   unused
+<09F1007>	Copyrights and Warranties (Debian)
+You may:
+- press F2 through F9 to read about the topic
+- type 0fmenu07 and press ENTER to go back to the boot screen
+- press ENTER to boot
+

@@ -1,0 +1,25 @@
+                  0fRefracta07                                07
+
+Refracta GNU/Linux is based on Devuan GNU/Linux (Jessie) and 
+uses Devuan repositories for packages. This is a live-CD. You can run
+the software by booting from the CD, and it won't touch your hard drive.
+
+Refracta provides a fully functional desktop environment with word
+processor, photo editor, multimedia software and more.
+
+Refracta contains many programs for diagnostics, rescue and repair.
+
+You can install Refracta to the hard drive and configure it the way you 
+want, and then create your own live-CD by running Refracta Snapshot.
+
+Login information
+Login name is 0fuser07, and the password is 0fuser07.
+The 0froot07 (admin) password is 0froot07.
+(...unless you changed them and made your own snapshot.)
+
+
+You may:
+- press F1 to return to the help index
+- type 0fmenu07 and press ENTER to go back to the boot screen
+- press ENTER to boot
+
