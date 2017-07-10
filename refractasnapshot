@@ -950,7 +950,7 @@ fi
 }
 
 final_message () {
-echo -e $"\m\tAll finished!\n"
+echo -e $"\n\tAll finished!\n"
 }
 
 check_copies
