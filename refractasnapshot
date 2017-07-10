@@ -671,6 +671,8 @@ ln -sv /proc/self/fd/2 "$work_dir"/myfs/dev/stderr
 ln -sv /proc/kcore "$work_dir"/myfs/dev/core
 ln -sv /run/shm "$work_dir"/myfs/dev/shm
 mkdir -v "$work_dir"/myfs/dev/pts
+mkdir -v "$work_dir"/myfs/tmp
+chmod 777 "$work_dir"/myfs/tmp
 
 # Clear configs from /etc/network/interfaces, wicd and NetworkManager
 # and netman, so they aren't stealthily included in the snapshot.
