@@ -31,6 +31,7 @@
 - /etc/crypttab
 - /etc/initramfs-tools/conf.d/resume     # see remove-cryptroot and nocrypt.sh
 - /etc/initramfs-tools/conf.d/cryptroot  # see remove-cryptroot and nocrypt.sh
+- /etc/popularity-contest.conf
 - /home/snapshot
 
 # Added for newer version of live-config/live-boot in wheezy 

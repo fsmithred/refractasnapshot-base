@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-version="refractasnapshot-10.0.2 (20170204)"
+version="refractasnapshot-10.0.3 (20170716)"
 
 TEXTDOMAIN=refractasnapshot-base
 TEXTDOMAINDIR=/usr/share/locale/
@@ -370,7 +370,7 @@ while true; do
 		
 		squash_filesystem
 		make_iso_fs
-		#cleanup
+		cleanup
 		final_message
 	
 		exit 0 ;;
@@ -681,7 +681,7 @@ iface lo inet loopback
 " > "$work_dir"/myfs/etc/network/interfaces
 	rm -f "$work_dir"/myfs/var/lib/wicd/configurations/*
 	rm -f "$work_dir"/myfs/etc/wicd/wireless-settings.conf
-	rm -f "$work_dir"/myfs/etc/NetworkManager/system-connections
+	rm -f "$work_dir"/myfs/etc/NetworkManager/system-connections/*
 	rm -f "$work_dir"/myfs/etc/network/wifi/*
 fi
 
@@ -926,8 +926,10 @@ echo $"Creating CD/DVD image file..."
 		fi
 	fi
 
+[[ -n "$volid" ]] || volid="liveiso"
+
     xorriso -as mkisofs -r -J -joliet-long -l ${isohybrid_opt} \
-    -partition_offset 16 -V "snapshot-live-cd"  -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot \
+    -partition_offset 16 -V "$volid"  -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot \
     -boot-load-size 4 -boot-info-table ${uefi_opt} -o "$snapshot_dir"/"$filename" iso/ 
 
 	if [[ $make_sha256sum = "yes" ]]; then
